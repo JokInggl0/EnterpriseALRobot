@@ -19,18 +19,16 @@ from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
 Hi {}, my name is {}! 
-I am an Anime themed group management bot with some fun extras [;)](https://telegra.ph/file/095d7e696096e21b06447.jpg)
+I am an Anime themed group management bot with some fun extras. 
 
 You can find the list of available commands with /help.
 
-[Kigyō's Repo](https://github.com/Dank-del/EnterpriseALRobot) 
 
-The support group chat is at @YorktownEagleUnion
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm a part of *Eagle Union*
+
 Have a look at the following for an idea of some of \
 the things I can help you with.
 *Main* commands available:
@@ -137,10 +135,10 @@ def start(bot: Bot, update: Update, args: List[str]):
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(KIGYO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Kigyō to your group",
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add me to your group",
                                                                        url="t.me/{}?startgroup=true".format(bot.username))]]))
     else:
-        update.effective_message.reply_text("Yo, whadup?")
+        update.effective_message.reply_text("Heya! I'm alive. PM me if you have any questions.")
 
 
 # for test purposes
